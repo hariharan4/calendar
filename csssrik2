@@ -1,0 +1,36 @@
+	html, body {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+	}
+	.outer {
+		height: 300px;
+		width: 300px;
+		background-color: orange;
+		overflow: hidden;
+		position: relative;
+	}
+	.active{
+		opacity: 0;
+		transition: all .4s ease-out;
+	}
+	.inner {
+		height: 100%;
+		width: 100%;
+		background-color: green;
+		position: absolute;
+		opacity: 1;
+		transition: all 0.4s ease-out;
+	}
+	</style>
+</head>
+<body>
+	<div class="outer okay">
+		<div class="inner"></div>
+	</div>
+	<button onclick="">click me</button>
+	<script>
+		var button = function(){
+			if(document.getElementsByClassName('outer')[0].classList.contains('active')){
+				document.getElementsByClassName('outer')[0].classList += 'active';
+			}
