@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta lang="en">
+    <link rel="stylesheet" type="text/css" href="calendartable.css">
+</head>
+
+<body>
+    <div id='calendar' onclick='myfunc()'>Calendar</div>
+    <div id='control'>
+
+        <img src='arrowleft.jpg' id='imgleft' onclick="func2()">
+        <img src='arrowroght.jpg' id='imgright' onclick="func2()">
+    </div>
+    <div id='Yearcalendar'>
+       <table id='tabyear'>
+        <tr>
+            <td >2010</td>
+            <td >2011</td>
+            <td>2012</td>
+            <td>2013</td>
+        </tr>
+        
+        <tr>
+            <td>2014</td>
+            <td>2015</td>
+            <td>2016</td>
+            <td>2017</td>
+        </tr>
+      
+        <tr>
+            <td>2018</td>
+            <td>2019</td>
+            <td>2020</td>
+            <td>2021</td>
+        </tr>
+       </table>
+
+    </div>
+    <div id='Monthcalendar'>
+            <table>
+            <tr>
+                <td>Jan</td>
+                <td>Feb</td>
+                <td>Mar</td>
+                <td>Apr</td>
+            </tr>
+            
+            <tr>
+                <td>May</td>
+                <td>Jun</td>
+                <td>Jul</td>
+                <td>Aug</td>
+            </tr>
+          
+            <tr>
+                <td>Sep</td>
+                <td>Oct</td>
+                <td>Nov</td>
+                <td>Dec</td>
+            </tr>
+           </table>
+
+    </div>
+
+</body>
+<script>
+
+    function myfunc() {
+        var cal = document.getElementById('calendar');
+        var monthcal=document.getElementById('Monthcalendar');
+        var yearcal = document.getElementById('Yearcalendar');
+      
+        var conr = document.getElementById('control');
+      
+
+        if (yearcal.style.display === "none" && monthcal.style.display==="none") {
+            
+            yearcal.style.display = "block";
+            //yearcal.classList.toggle('Yearcal2');
+            conr.style.display = "block";
+           
+        }
+        else {
+            monthcal.style.display="none";
+            yearcal.style.display = 'none';
+            conr.style.display = 'none'
+        }
+        var td=document.getElementsByTagName('td');
+        for(var i=0;i<td.length;i++){
+          
+           
+            td[i].setAttribute('onclick','func3(this)');
+        }
+
+
+    }
+    function func2(){
+        var cal = document.getElementById('calendar');
+        var monthcal=document.getElementById('Monthcalendar');
+        var yearcal = document.getElementById('Yearcalendar');
+        var conr = document.getElementById('control');
+        if(yearcal.style.display === "block"){
+            yearcal.style.display = "none";
+            monthcal.style.display="block";
+        }
+        else{
+            yearcal.style.display = "block";
+            monthcal.style.display="none";
+
+        }
+
+
+    }
+
+    function func3(x){
+        var td=document.getElementsByTagName('td');
+        var cal = document.getElementById('calendar');
+        var monthcal=document.getElementById('Monthcalendar');
+        var yearcal = document.getElementById('Yearcalendar');
+        var conr = document.getElementById('control');
+        for(var i=0;i<td.length;i++){
+          
+            td[i].classList.remove('tdclass');
+        }
+        if(yearcal.style.display === "block"){
+            yearcal.style.display = "none";
+            monthcal.style.display="block";
+        }
+        else{
+            yearcal.style.display = "block";
+            monthcal.style.display="none";
+
+        }
+        x.classList.toggle('tdclass');
+        
+        var dat=x.innerHTML+" "+dat;
+        console.log(dat);
+        if (dat.length>15){
+            console.log(dat);
+            yearcal.style.display = "none";
+            monthcal.style.display="none";
+            conr.style.display='none';
+        }
+    }
+
+</script>
+
+</html>

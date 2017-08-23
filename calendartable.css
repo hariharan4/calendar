@@ -1,0 +1,70 @@
+#calendar{
+	height: 30px;
+	width:160px;
+	background-color: pink;
+	margin-left: 200px;
+	margin-top: 200px;
+	padding: 5px;
+	font-variant-position: center;
+	color:black;
+	border: groove;
+	cursor: pointer;
+
+
+	}
+
+#control{
+	width:420px;
+	display: none;
+	height: 40px;
+	margin-left: 200px;
+	background-color: blue;
+}
+img{
+	height: inherit;
+	cursor: pointer;
+}
+#imgright{
+	float:right;
+
+}
+tr{
+	padding:300px;
+}
+td{
+	padding: 30px;
+	
+	font-size: 20px;
+
+}
+#Yearcalendar,#Monthcalendar{
+	display: none;
+	height: 300px;
+	width:420px;
+	background-color: lightblue;
+	margin-left: 200px;
+	
+	cursor: pointer;
+	transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
+
+}
+td:hover{
+	
+	background-color: darkblue;
+	color: white;
+}
+.tdclass{
+	background-color: darkblue;
+	border-color: white;
+	color:white;
+}
+.tdclass2{
+	background-color: lightblue;
+	color:black;
+}
+.Yearcal2{
+	width:420px;
+	height:300px;
+}
+
+
