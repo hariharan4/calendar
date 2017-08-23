@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="calendar.css">
+  </head>
+<body>
+
+
+<div class='parent'>
+  <div id='div1'>
+<div class='child' onclick='func(this)' >JANUARY</div>
+<div class='child' onclick='func(this)'>FEBRUARY</div>
+<div class='child' onclick='func(this)'>MARCH</div>
+<div class='child' onclick='func(this)'>APRIL</div>
+  </div>
+
+<div id='div2'>
+<div class='child' onclick='func(this)'>MAY</div>
+<div class='child' onclick='func(this)'>JUNE</div>
+<div class='child' onclick='func(this)'>JULY</div>
+<div class='child' onclick='func(this)'>AUGUST</div>
+
+</div>
+<div id='div3'>
+<div class='child' onclick='func(this)'>SEPTEMBER</div>
+<div class='child' onclick='func(this)'>OCTOBER</div>
+<div class='child' onclick='func(this)'>NOVEMBER</div>
+<div class='child' onclick='func(this)'>DECEMBER</div>
+</div>
+</div>
+
+
+<script>
+  window.onload=__init__;
+  function __init__(){
+    
+  }
+  function func(x){
+    console.log(x.innerHTML);
+    var div=document.getElementsByClassName('child');
+    for(var i=0;i<div.length;i++){
+      div[i].innerHTML=2010+i;
+     
+    }
+   // document.getElementsByClassName("parent").style.transition=" width 10s,height 10s"; 
+    
+  }
+</script>
+</body>
+</html>
